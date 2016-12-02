@@ -5,7 +5,7 @@ seajs.config({
     // 调试模式
     //debug: true,
     vars:{
-        language:window.location.href.match(/([a-z]+)/g)[1]||"en"
+        
     },
     alias:{
         "jquery":"jquery-1.11.2.min"
