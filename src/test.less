@@ -1,0 +1,154 @@
+/*日历控件*/
+
+.xcalendar{
+    width: 100%;
+    background: #fff;
+    border-top:solid 2px #3c8dbc;
+    box-sizing: border-box;
+    &:before, &:after {
+        box-sizing: border-box;
+    }
+    .title{
+        text-align: center;
+        padding: 0 10px;
+        height: 40px;
+        font-size: 18px;
+        
+        border-bottom: solid 1px #ccc;
+        span{
+            font-size: 26px;
+        }
+        a{
+            margin-top:10px;
+            box-shadow: 0 0 3px rgba(0,0,0,.5);
+            width: 15px;
+            height: 20px;
+            display: block;
+            &:active{
+                background-color: rgba(100,100,100,.2);
+            }
+        }
+        .today{
+            font-size: 10px;
+            float: left;
+            width: 50px;
+            margin-left:10px;
+            color: #666;
+            line-height: 20px;
+        }
+        .refresh{
+            float: left;
+            border-radius: 10px;
+            width: 20px;
+            background: #fff url(../images/ref.png) no-repeat;
+            background-size: 70%;
+            background-position: 4px 3px;
+            &:hover{
+                transform: rotate(360deg);
+                transition: transform .8s ease;
+            }
+        }
+        .setting{
+            float: right;
+            width: 20px;
+            background: #fff url(../images/setting.png) no-repeat;
+            background-size: 85%;
+            background-position:2px;
+            margin-left:20px;
+        }
+        .pre,.next{
+            float: right;
+            background: #fff url(../images/left.png) no-repeat;
+            background-position: 2px 5px;
+            background-size: 70%;
+        }
+        .next{
+            transform: rotate(180deg);
+        }
+    }
+    .list{
+        display: flex;
+        box-orient:horizontal;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        .item{
+            width: 14.28%;
+            text-align: center;
+            background: #fff;
+        }
+    }
+    .weeks{
+        border-bottom: solid 1px #ccc;
+        border-left: solid 1px #ccc;
+        border-right: solid 1px #ccc;
+        .week{
+            padding: 5px 0;
+            border-left: solid 1px #ccc;
+            cursor: pointer;
+            &:first-child{
+                border: none;
+            }
+        }
+    }
+    .days{
+        justify-content: flex-start;
+        border-left: solid 1px #ccc;
+        .day{
+            cursor: pointer;
+            user-select: none;
+            border-bottom: solid 1px #ccc;
+            border-right: solid 1px #ccc;
+            position: relative;
+            .date{
+               font-size: 16px;
+               color: rgba(0,0,0,.8);
+            }
+            .txt{
+                div{
+                    color: #fff;
+                    margin: 4px 2px;
+                    padding: 2px 3px;
+                    text-align: left;
+                    box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+                    span{
+                        float: right;
+                    }
+                }
+            }
+            &.now{
+                background: #fcf8e3;
+            }
+            &.active{
+                background: #49BDBD;
+                .txt{
+                    opacity: .5;
+                }
+                .date{
+                    color: #fff;
+                }
+            }
+        }
+        .pre,.next{
+            background: #eee;
+            .date{
+                color: #bbb;
+            }
+        }
+        .load{
+            margin:0 auto;
+            width: 100px;
+            height: 100px;
+            background: url(../images/load.png) no-repeat 34px 34px;
+            animation: zhuan 1.5s linear infinite;
+        }
+    }
+}
+@keyframes  zhuan{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
